@@ -7,6 +7,7 @@
 body {
     font-family: 'Muli', sans-serif;
     align-items: center;
+    justify-content: center;
     display: flex;
     margin: 0%;
     height: 100vh;
@@ -16,6 +17,7 @@ body {
 
 .container {
     display: flex;
+    flex-wrap: wrap; /* 1 */
     width: 90vw;
 }
 
@@ -27,7 +29,7 @@ body {
     border-radius: 50px;
     color: #fff;
     cursor: pointer;
-    flex: 0.5;
+    flex: 0.5; /* 2 */
     margin: 10px;
     position: relative;
     transition: flex 0.7s ease-in;
@@ -55,9 +57,15 @@ body {
     .container {
         width: 100vw;
     }
+}
 
+/*
+Notes:
+1 - @media: rather than  display: none for panel 4 & 5.
     .panel:nth-of-type(4),
     .panel:nth-of-type(5) {
         display: none;
     }
-}
+I added flex-warp: warp to container for them to also fit in 'max-width: 480px'. Not sure if there is a better way.
+2- flex: 0.5; is used to make the panels responsive. Another option: flex: 0.5 1 auto;
+*/
